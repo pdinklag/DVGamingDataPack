@@ -25,7 +25,7 @@ scoreboard players reset @a near_home
 
 # Teleport
 # NEED SERVER SPAWN COORDINATES HERE
-execute as @a[scores={cmd_spawn=1}] run teleport @s 0 4 0 -90 0
+execute as @a[scores={cmd_spawn=1}] run teleport @s -6 77 23 180 0
 
 # Effects
 execute as @a[scores={cmd_spawn=1}] at @s anchored eyes run particle minecraft:portal ^ ^ ^-1 0 0 0 10 250
