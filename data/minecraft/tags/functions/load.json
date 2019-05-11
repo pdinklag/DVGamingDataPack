@@ -4,6 +4,7 @@
         "dvg:spawnpos-init",
         "dvg:enderpearls-init",
         "dvg:cmd-back-init",
-        "dvg:cmd-spawn-init"
+        "dvg:cmd-spawn-init",
+        "dvg:death-init"
     ]
 }
