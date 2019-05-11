@@ -27,7 +27,7 @@ execute as @a[scores={cmd_back=1}] at @s anchored eyes run particle minecraft:po
 execute as @a[scores={cmd_back=1}] at @s run playsound minecraft:entity.enderman.teleport player @a
 
 # Print message
-execute as @a[scores={cmd_back=1}] run tellraw @s ["",{"text":"Teleported back home!","color":"green"}]
+execute as @a[scores={cmd_back=1}] run tellraw @s ["",{"selector":"@s","color":"green"},{"text":" has teleported back home."}]
 
 # Spend one ender pearl
 execute as @a[scores={cmd_back=1}] run clear @s minecraft:ender_pearl 1
