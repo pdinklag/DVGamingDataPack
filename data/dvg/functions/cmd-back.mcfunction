@@ -13,14 +13,10 @@ execute as @a[scores={cmd_back=1,near_spawn=0}] run tellraw @s ["",{"text":"You 
 scoreboard players reset @a[scores={cmd_back=1,near_spawn=0}] cmd_back
 scoreboard players reset @a near_spawn
 
-# Summon armor stand
-execute as @a[scores={cmd_back=1}] at @s run summon armor_stand ~-2 ~ ~ {CustomName:"{\"text\":\"_back\"}",NoGravity:1,Marker:1,Invisible:1}
-execute as @a[scores={cmd_back=1}] at @s store result entity @e[type=armor_stand,limit=1,sort=nearest,name=_back] Pos[0] double 1 run data get entity @s SpawnX
-execute as @a[scores={cmd_back=1}] at @s store result entity @e[type=armor_stand,limit=1,sort=nearest,name=_back] Pos[1] double 1 run data get entity @s SpawnY
-execute as @a[scores={cmd_back=1}] at @s store result entity @e[type=armor_stand,limit=1,sort=nearest,name=_back] Pos[2] double 1 run data get entity @s SpawnZ
-
-# Teleport
-execute as @a[scores={cmd_back=1}] run teleport @s @e[type=armor_stand,limit=1,sort=nearest,name=_back]
+# Teleport on each axis separately
+execute if entity @a[scores={cmd_back=1}] run function dvg:back-x
+execute if entity @a[scores={cmd_back=1}] run function dvg:back-y
+execute if entity @a[scores={cmd_back=1}] run function dvg:back-z
 
 # Effects
 execute as @a[scores={cmd_back=1}] at @s anchored eyes run particle minecraft:portal ^ ^ ^-1 0 0 0 10 250

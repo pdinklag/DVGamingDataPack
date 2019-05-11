@@ -4,10 +4,11 @@
         "dvg:clear-spawnmobs",
         "dvg:clear-explosives",
         "dvg:disarm-creepers",
+        "dvg:location-tick",
         "dvg:spawnpos-tick",
+        "dvg:death-tick",
         "dvg:enderpearls-tick",
         "dvg:cmd-back-tick",
-        "dvg:cmd-spawn-tick",
-        "dvg:death-tick"
+        "dvg:cmd-spawn-tick"
     ]
 }

@@ -2,9 +2,10 @@
     "replace": false,
     "values": [
         "dvg:spawnpos-init",
+        "dvg:location-init",
+        "dvg:death-init",
         "dvg:enderpearls-init",
         "dvg:cmd-back-init",
-        "dvg:cmd-spawn-init",
-        "dvg:death-init"
+        "dvg:cmd-spawn-init"
     ]
 }
