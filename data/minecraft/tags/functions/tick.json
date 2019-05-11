@@ -1,8 +1,12 @@
 {
     "replace": false,
     "values": [
-        "dvg:clearmobs",
-        "dvg:cleartnt",
-        "dvg:disable-creeper-explosions"
+        "dvg:clear-spawnmobs",
+        "dvg:clear-explosives",
+        "dvg:disarm-creepers",
+        "dvg:spawnpos-tick",
+        "dvg:enderpearls-tick",
+        "dvg:cmd-back-tick",
+        "dvg:cmd-spawn-tick"
     ]
 }
