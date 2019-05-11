@@ -18,6 +18,9 @@ execute if entity @a[scores={cmd_back=1}] run function dvg:back-x
 execute if entity @a[scores={cmd_back=1}] run function dvg:back-y
 execute if entity @a[scores={cmd_back=1}] run function dvg:back-z
 
+# make sure player is safe
+execute as @a[scores={cmd_back=1}] at @s run spreadplayers ~ ~ 0 1 false @s
+
 # Effects
 execute as @a[scores={cmd_back=1}] at @s anchored eyes run particle minecraft:portal ^ ^ ^-1 0 0 0 10 250
 execute as @a[scores={cmd_back=1}] at @s run playsound minecraft:entity.enderman.teleport player @a
