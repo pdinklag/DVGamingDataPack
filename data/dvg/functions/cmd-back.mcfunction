@@ -22,10 +22,14 @@ execute as @a[scores={cmd_back=1}] at @s store result entity @e[type=armor_stand
 # Teleport
 execute as @a[scores={cmd_back=1}] run teleport @s @e[type=armor_stand,limit=1,sort=nearest,name=_back]
 
+# Effects
+execute as @a[scores={cmd_back=1}] at @s anchored eyes run particle minecraft:portal ^ ^ ^-1 0 0 0 10 250
+execute as @a[scores={cmd_back=1}] at @s run playsound minecraft:entity.enderman.teleport player @a
+
 # Print message
 execute as @a[scores={cmd_back=1}] run tellraw @s ["",{"text":"Teleported back home!","color":"green"}]
 
-# Spend one ender peal
+# Spend one ender pearl
 execute as @a[scores={cmd_back=1}] run clear @s minecraft:ender_pearl 1
 
 # Reset at_spawn Flag

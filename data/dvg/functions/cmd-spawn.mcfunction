@@ -27,6 +27,10 @@ scoreboard players reset @a near_home
 # NEED SERVER SPAWN COORDINATES HERE
 execute as @a[scores={cmd_spawn=1}] run teleport @s 0 4 0 -90 0
 
+# Effects
+execute as @a[scores={cmd_spawn=1}] at @s anchored eyes run particle minecraft:portal ^ ^ ^-1 0 0 0 10 250
+execute as @a[scores={cmd_spawn=1}] at @s run playsound minecraft:entity.enderman.teleport player @a
+
 # Print message
 execute as @a[scores={cmd_spawn=1}] run tellraw @s ["",{"text":"Teleported to spawn!","color":"green"}]
 
