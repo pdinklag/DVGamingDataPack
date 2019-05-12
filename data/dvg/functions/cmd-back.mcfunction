@@ -7,9 +7,8 @@ scoreboard objectives add dz dummy
 
 # Print error messages
 execute as @a[nbt=!{Dimension:0},scores={back=1}] run tellraw @s ["",{"text":"You can only teleport in the overworld!","color":"red"}]
-execute as @a[nbt={Dimension:0},scores={back=1..,at_spawn=0}] run tellraw @s ["",{"text":"You cannot teleport back home now!","color":"red"}]
-execute as @a[nbt={Dimension:0},scores={back=1..,at_spawn=1..,enderpearls=0}] run tellraw @s ["",{"text":"You need an ender pearl to teleport back home!","color":"red"}]
-scoreboard players set @a[nbt={Dimension:0},scores={back=1..,at_spawn=1..,enderpearls=1..}] cmd_back 1
+execute as @a[nbt={Dimension:0},scores={back=1..,enderpearls=0}] run tellraw @s ["",{"text":"You need an ender pearl to teleport back home!","color":"red"}]
+scoreboard players set @a[nbt={Dimension:0},scores={back=1..,enderpearls=1..}] cmd_back 1
 scoreboard players reset @a back
 
 # Measure and test distance from spawn
@@ -38,9 +37,6 @@ execute as @a[scores={cmd_back=1}] run tellraw @a ["",{"selector":"@s","color":"
 
 # Spend one ender pearl
 execute as @a[scores={cmd_back=1}] run clear @s minecraft:ender_pearl 1
-
-# Reset at_spawn Flag
-scoreboard players set @a[scores={cmd_back=1}] at_spawn 0
 
 # Remove armor stands
 kill @e[type=armor_stand,name=_back]
