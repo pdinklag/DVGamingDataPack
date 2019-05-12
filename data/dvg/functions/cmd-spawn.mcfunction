@@ -12,21 +12,21 @@ execute as @a[nbt={Dimension:0},scores={spawn=1..,at_spawn=0,enderpearls=0}] run
 scoreboard players set @a[nbt={Dimension:0},scores={spawn=1..,at_spawn=0,enderpearls=1..}] cmd_spawn 1
 scoreboard players reset @a spawn
 
-# compute squared distance: dx^2 + dy^2 + dz^2
+# compute squared distance from player spawn: dx^2 + dy^2 + dz^2
 scoreboard players set @a[scores={cmd_spawn=1}] near_home 0
 
 # dx^2
-execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dx = @s spawnpos_x
+execute as @a[scores={cmd_spawn=1}] store result score @s dx run data get entity @s SpawnX
 execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dx -= @s location_x
 execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dx *= @s dx
 
 # dy^2
-execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dy = @s spawnpos_y
+execute as @a[scores={cmd_spawn=1}] store result score @s dy run data get entity @s SpawnY
 execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dy -= @s location_y
 execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dy *= @s dy
 
 # dz^2
-execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dz = @s spawnpos_z
+execute as @a[scores={cmd_spawn=1}] store result score @s dz run data get entity @s SpawnZ
 execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dz -= @s location_z
 execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dz *= @s dz
 
@@ -39,6 +39,11 @@ scoreboard players set @a[scores={cmd_spawn=1,dx=..256}] near_home 1
 execute as @a[scores={cmd_spawn=1,near_home=0}] run tellraw @s ["",{"text":"You are too far away from home!","color":"red"}]
 scoreboard players reset @a[scores={cmd_spawn=1,near_home=0}] cmd_spawn
 scoreboard players reset @a near_home
+
+# Store current location
+execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s back_x = @s location_x
+execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s back_y = @s location_y
+execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s back_z = @s location_z
 
 # Teleport
 # NEED SERVER SPAWN COORDINATES HERE

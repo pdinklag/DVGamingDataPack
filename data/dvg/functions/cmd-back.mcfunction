@@ -20,13 +20,14 @@ execute as @a[scores={cmd_back=1,near_spawn=0}] run tellraw @s ["",{"text":"You 
 scoreboard players reset @a[scores={cmd_back=1,near_spawn=0}] cmd_back
 scoreboard players reset @a near_spawn
 
+# Teleport to origin first
+# this makes sure player will end up in the center of his home block
+execute as @a[scores={cmd_back=1}] run tp @s 0 0 0
+
 # Teleport on each axis separately
 execute if entity @a[scores={cmd_back=1}] run function dvg:back-x
 execute if entity @a[scores={cmd_back=1}] run function dvg:back-y
 execute if entity @a[scores={cmd_back=1}] run function dvg:back-z
-
-# make sure player is safe
-execute as @a[scores={cmd_back=1}] at @s run spreadplayers ~ ~ 0 1 false @s
 
 # Effects
 execute as @a[scores={cmd_back=1}] at @s anchored eyes run particle minecraft:portal ^ ^ ^-1 0 0 0 10 250

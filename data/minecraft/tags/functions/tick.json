@@ -5,7 +5,6 @@
         "dvg:clear-explosives",
         "dvg:disarm-creepers",
         "dvg:location-tick",
-        "dvg:spawnpos-tick",
         "dvg:death-tick",
         "dvg:enderpearls-tick",
         "dvg:cmd-back-tick",

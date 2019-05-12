@@ -1,7 +1,6 @@
 {
     "replace": false,
     "values": [
-        "dvg:spawnpos-init",
         "dvg:location-init",
         "dvg:death-init",
         "dvg:enderpearls-init",
