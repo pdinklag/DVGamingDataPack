@@ -1,3 +1,10 @@
+# Temporary variables
+scoreboard objectives add cmd_back dummy
+scoreboard objectives add near_spawn dummy
+scoreboard objectives add dx dummy
+scoreboard objectives add dy dummy
+scoreboard objectives add dz dummy
+
 # Print error messages
 execute as @a[nbt=!{Dimension:0},scores={back=1}] run tellraw @s ["",{"text":"You can only teleport in the overworld!","color":"red"}]
 execute as @a[nbt={Dimension:0},scores={back=1..,at_spawn=0}] run tellraw @s ["",{"text":"You cannot teleport back home now!","color":"red"}]
@@ -37,5 +44,9 @@ scoreboard players set @a[scores={cmd_back=1}] at_spawn 0
 # Remove armor stands
 kill @e[type=armor_stand,name=_back]
 
-# Reset
-scoreboard players reset @a cmd_back
+# Remove temporaries
+scoreboard objectives remove cmd_back
+scoreboard objectives remove near_spawn
+scoreboard objectives remove dx
+scoreboard objectives remove dy
+scoreboard objectives remove dz
