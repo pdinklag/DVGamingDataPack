@@ -54,7 +54,7 @@ execute as @a[scores={cmd_spawn=1}] at @s anchored eyes run particle minecraft:p
 execute as @a[scores={cmd_spawn=1}] at @s run playsound minecraft:entity.enderman.teleport player @a
 
 # Print message
-execute as @a[scores={cmd_spawn=1}] run tellraw @s ["",{"selector":"@s","color":"green"},{"text":" has teleported to spawn."}]
+execute as @a[scores={cmd_spawn=1}] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" has teleported to spawn."}]
 
 # Spend one ender peal
 execute as @a[scores={cmd_spawn=1}] run clear @s minecraft:ender_pearl 1
