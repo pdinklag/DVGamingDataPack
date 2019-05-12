@@ -1,3 +1,10 @@
+# Temporary variables
+scoreboard objectives add cmd_spawn dummy
+scoreboard objectives add near_home dummy
+scoreboard objectives add dx dummy
+scoreboard objectives add dy dummy
+scoreboard objectives add dz dummy
+
 # Print error messages
 execute as @a[nbt=!{Dimension:0},scores={spawn=1}] run tellraw @s ["",{"text":"You can only teleport in the overworld!","color":"red"}]
 execute as @a[nbt={Dimension:0},scores={spawn=1..,at_spawn=1..}] run tellraw @s ["",{"text":"You need to teleport back first!","color":"red"}]
@@ -5,20 +12,30 @@ execute as @a[nbt={Dimension:0},scores={spawn=1..,at_spawn=0,enderpearls=0}] run
 scoreboard players set @a[nbt={Dimension:0},scores={spawn=1..,at_spawn=0,enderpearls=1..}] cmd_spawn 1
 scoreboard players reset @a spawn
 
-# Use temporary armor stand to test distance to home
-execute as @a[scores={cmd_spawn=1}] at @s run summon armor_stand ~-2 ~ ~ {CustomName:"{\"text\":\"_home\"}",NoGravity:1,Marker:1,Invisible:1}
-execute as @a[scores={cmd_spawn=1}] at @s store result entity @e[type=armor_stand,limit=1,sort=nearest,name=_home] Pos[0] double 1 run data get entity @s SpawnX
-execute as @a[scores={cmd_spawn=1}] at @s store result entity @e[type=armor_stand,limit=1,sort=nearest,name=_home] Pos[1] double 1 run data get entity @s SpawnY
-execute as @a[scores={cmd_spawn=1}] at @s store result entity @e[type=armor_stand,limit=1,sort=nearest,name=_home] Pos[2] double 1 run data get entity @s SpawnZ
-
-# Measure distance
+# compute squared distance: dx^2 + dy^2 + dz^2
 scoreboard players set @a[scores={cmd_spawn=1}] near_home 0
-execute at @e[type=armor_stand,name=_home] run scoreboard players set @a[distance=..16,scores={cmd_spawn=1}] near_home 1
 
-# Kill temporary armor stand
-kill @e[type=armor_stand,name=_home]
+# dx^2
+execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dx = @s spawnpos_x
+execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dx -= @s location_x
+execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dx *= @s dx
+
+# dy^2
+execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dy = @s spawnpos_y
+execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dy -= @s location_y
+execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dy *= @s dy
+
+# dz^2
+execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dz = @s spawnpos_z
+execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dz -= @s location_z
+execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dz *= @s dz
+
+# sum
+execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dx += @s dy
+execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s dx += @s dz
 
 # Test distance
+scoreboard players set @a[scores={cmd_spawn=1,dx=..256}] near_home 1
 execute as @a[scores={cmd_spawn=1,near_home=0}] run tellraw @s ["",{"text":"You are too far away from home!","color":"red"}]
 scoreboard players reset @a[scores={cmd_spawn=1,near_home=0}] cmd_spawn
 scoreboard players reset @a near_home
@@ -40,5 +57,9 @@ execute as @a[scores={cmd_spawn=1}] run clear @s minecraft:ender_pearl 1
 # Set at_spawn Flag
 scoreboard players set @a[scores={cmd_spawn=1}] at_spawn 1
 
-# Reset
-scoreboard players reset @a cmd_spawn
+# remove temporaries
+scoreboard objectives remove dx
+scoreboard objectives remove dy
+scoreboard objectives remove dz
+scoreboard objectives remove cmd_spawn
+scoreboard objectives remove near_home
