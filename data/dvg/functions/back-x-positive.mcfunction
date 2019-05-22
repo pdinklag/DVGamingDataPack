@@ -1,4 +1,16 @@
 # binary decomposition of coordinate to teleport to
+execute as @a[scores={cmd_back=1,dx=1048576..}] at @s run tp @s ~1048576 ~ ~
+scoreboard players remove @a[scores={cmd_back=1,dx=1048576..}] dx 1048576
+
+execute as @a[scores={cmd_back=1,dx=524288..}] at @s run tp @s ~524288 ~ ~
+scoreboard players remove @a[scores={cmd_back=1,dx=524288..}] dx 524288
+
+execute as @a[scores={cmd_back=1,dx=262144..}] at @s run tp @s ~262144 ~ ~
+scoreboard players remove @a[scores={cmd_back=1,dx=262144..}] dx 262144
+
+execute as @a[scores={cmd_back=1,dx=131072..}] at @s run tp @s ~131072 ~ ~
+scoreboard players remove @a[scores={cmd_back=1,dx=131072..}] dx 131072
+
 execute as @a[scores={cmd_back=1,dx=65536..}] at @s run tp @s ~65536 ~ ~
 scoreboard players remove @a[scores={cmd_back=1,dx=65536..}] dx 65536
 

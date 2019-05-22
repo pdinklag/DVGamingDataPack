@@ -1,28 +1,4 @@
 # binary decomposition of coordinate to teleport to
-execute as @a[scores={cmd_back=1,dy=..-65536}] at @s run tp @s ~ ~-65536 ~
-scoreboard players add @a[scores={cmd_back=1,dy=..-65536}] dy 65536
-
-execute as @a[scores={cmd_back=1,dy=..-32768}] at @s run tp @s ~ ~-32768 ~
-scoreboard players add @a[scores={cmd_back=1,dy=..-32768}] dy 32768
-
-execute as @a[scores={cmd_back=1,dy=..-16384}] at @s run tp @s ~ ~-16384 ~
-scoreboard players add @a[scores={cmd_back=1,dy=..-16384}] dy 16384
-
-execute as @a[scores={cmd_back=1,dy=..-8192}] at @s run tp @s ~ ~-8192 ~
-scoreboard players add @a[scores={cmd_back=1,dy=..-8192}] dy 8192
-
-execute as @a[scores={cmd_back=1,dy=..-4096}] at @s run tp @s ~ ~-4096 ~
-scoreboard players add @a[scores={cmd_back=1,dy=..-4096}] dy 4096
-
-execute as @a[scores={cmd_back=1,dy=..-2048}] at @s run tp @s ~ ~-2048 ~
-scoreboard players add @a[scores={cmd_back=1,dy=..-2048}] dy 2048
-
-execute as @a[scores={cmd_back=1,dy=..-1024}] at @s run tp @s ~ ~-1024 ~
-scoreboard players add @a[scores={cmd_back=1,dy=..-1024}] dy 1024
-
-execute as @a[scores={cmd_back=1,dy=..-512}] at @s run tp @s ~ ~-512 ~
-scoreboard players add @a[scores={cmd_back=1,dy=..-512}] dy 512
-
 execute as @a[scores={cmd_back=1,dy=..-256}] at @s run tp @s ~ ~-256 ~
 scoreboard players add @a[scores={cmd_back=1,dy=..-256}] dy 256
 
