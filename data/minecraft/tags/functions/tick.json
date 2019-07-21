@@ -3,7 +3,6 @@
     "values": [
         "dvg:clear-spawnmobs",
         "dvg:clear-explosives",
-        "dvg:disarm-creepers",
         "dvg:location-tick",
         "dvg:death-tick",
         "dvg:enderpearls-tick",
