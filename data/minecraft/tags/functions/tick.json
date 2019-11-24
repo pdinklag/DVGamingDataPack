@@ -7,6 +7,7 @@
         "dvg:death-tick",
         "dvg:enderpearls-tick",
         "dvg:cmd-back-tick",
-        "dvg:cmd-spawn-tick"
+        "dvg:cmd-spawn-tick",
+        "dvg:fix-adventure"
     ]
 }
