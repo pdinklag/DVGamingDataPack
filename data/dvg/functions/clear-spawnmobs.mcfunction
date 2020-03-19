@@ -27,5 +27,4 @@ tp @e[distance=..128,type=minecraft:vindicator] 0 -256 0
 tp @e[distance=..128,type=minecraft:witch] 0 -256 0
 tp @e[distance=..128,type=minecraft:wither_skeleton] 0 -256 0
 tp @e[distance=..128,type=minecraft:zombie] 0 -256 0
-tp @e[distance=..128,type=minecraft:zombie_pigman] 0 -256 0
 tp @e[distance=..128,type=minecraft:zombie_villager] 0 -256 0
