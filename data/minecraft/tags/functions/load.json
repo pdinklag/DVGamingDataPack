@@ -4,6 +4,7 @@
         "dvg:location-init",
         "dvg:death-init",
         "dvg:enderpearls-init",
+        "dvg:lavabucket-init",
         "dvg:cmd-back-init",
         "dvg:cmd-spawn-init"
     ]
