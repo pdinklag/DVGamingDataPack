@@ -1,6 +1,7 @@
 {
     "replace": false,
     "values": [
+        "dvg:protect-spawn",
         "dvg:clear-spawnmobs",
         "dvg:clear-explosives",
         "dvg:location-tick",
@@ -8,7 +9,6 @@
         "dvg:enderpearls-tick",
         "dvg:lavabucket-tick",
         "dvg:cmd-back-tick",
-        "dvg:cmd-spawn-tick",
-        "dvg:fix-adventure"
+        "dvg:cmd-spawn-tick"
     ]
 }
