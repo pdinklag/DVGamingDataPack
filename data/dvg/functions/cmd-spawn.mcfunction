@@ -46,7 +46,7 @@ execute as @a[scores={cmd_spawn=1}] run scoreboard players operation @s back_z =
 
 # Teleport
 # NEED SERVER SPAWN COORDINATES HERE
-execute as @a[scores={cmd_spawn=1}] run teleport @s -6 77 23 180 0
+execute as @a[scores={cmd_spawn=1}] run teleport @s -7 78 28 90 0
 
 # Effects
 execute as @a[scores={cmd_spawn=1}] at @s anchored eyes run particle minecraft:portal ^ ^ ^-1 0 0 0 10 250
