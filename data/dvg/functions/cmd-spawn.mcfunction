@@ -6,9 +6,9 @@ scoreboard objectives add dy dummy
 scoreboard objectives add dz dummy
 
 # Print error messages
-execute as @a[nbt=!{Dimension:0},scores={spawn=1}] run tellraw @s ["",{"text":"You can only teleport in the overworld!","color":"red"}]
-execute as @a[nbt={Dimension:0},scores={spawn=1..,enderpearls=0}] run tellraw @s ["",{"text":"You need an ender pearl to teleport to spawn!","color":"red"}]
-scoreboard players set @a[nbt={Dimension:0},scores={spawn=1..,enderpearls=1..}] cmd_spawn 1
+execute as @a[nbt=!{Dimension:"minecraft:overworld"},scores={spawn=1}] run tellraw @s ["",{"text":"You can only teleport in the overworld!","color":"red"}]
+execute as @a[nbt={Dimension:"minecraft:overworld"},scores={spawn=1..,enderpearls=0}] run tellraw @s ["",{"text":"You need an ender pearl to teleport to spawn!","color":"red"}]
+scoreboard players set @a[nbt={Dimension:"minecraft:overworld"},scores={spawn=1..,enderpearls=1..}] cmd_spawn 1
 scoreboard players reset @a spawn
 
 # compute squared distance from player spawn: dx^2 + dy^2 + dz^2

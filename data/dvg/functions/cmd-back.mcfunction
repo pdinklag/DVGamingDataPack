@@ -6,9 +6,9 @@ scoreboard objectives add dy dummy
 scoreboard objectives add dz dummy
 
 # Print error messages
-execute as @a[nbt=!{Dimension:0},scores={back=1}] run tellraw @s ["",{"text":"You can only teleport in the overworld!","color":"red"}]
-execute as @a[nbt={Dimension:0},scores={back=1..,enderpearls=0}] run tellraw @s ["",{"text":"You need an ender pearl to teleport back home!","color":"red"}]
-scoreboard players set @a[nbt={Dimension:0},scores={back=1..,enderpearls=1..}] cmd_back 1
+execute as @a[nbt=!{Dimension:"minecraft:overworld"},scores={back=1}] run tellraw @s ["",{"text":"You can only teleport in the overworld!","color":"red"}]
+execute as @a[nbt={Dimension:"minecraft:overworld"},scores={back=1..,enderpearls=0}] run tellraw @s ["",{"text":"You need an ender pearl to teleport back home!","color":"red"}]
+scoreboard players set @a[nbt={Dimension:"minecraft:overworld"},scores={back=1..,enderpearls=1..}] cmd_back 1
 scoreboard players reset @a back
 
 # Measure and test distance from spawn
