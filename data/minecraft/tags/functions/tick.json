@@ -3,6 +3,8 @@
     "values": [
         "dvg:location-tick",
         "dvg:inventory-tick",
+        "dvg:triggers-tick",
+        "dvg:hub-tick",
         "dvg:worlds-tick"
     ],
     "disabled": [

@@ -15,3 +15,9 @@ scoreboard players set @a[nbt={Dimension:"minecraft:the_nether"}] location_dim -
 scoreboard players set @a[nbt={Dimension:"minecraft:overworld"}] location_dim 0
 scoreboard players set @a[nbt={Dimension:"dvg:old"}] location_dim 1
 scoreboard players set @a[nbt={Dimension:"dvg:caves"}] location_dim 2
+
+scoreboard players set @a[nbt={SpawnDimension:"minecraft:the_end"}] spawn_dim -2
+scoreboard players set @a[nbt={SpawnDimension:"minecraft:the_nether"}] spawn_dim -1
+scoreboard players set @a[nbt={SpawnDimension:"minecraft:overworld"}] spawn_dim 0
+scoreboard players set @a[nbt={SpawnDimension:"dvg:old"}] spawn_dim 1
+scoreboard players set @a[nbt={SpawnDimension:"dvg:caves"}] spawn_dim 2
