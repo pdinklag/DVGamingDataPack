@@ -12,8 +12,12 @@ scoreboard players reset @a[scores={hub=1,location_dim=0}] hub
 execute as @a[scores={hub=1}] unless score @s location_dim = @s spawn_dim run tellraw @s ["",{"text":"You need to be in your home dimension!","color":"red"}]
 execute as @a[scores={hub=1}] unless score @s location_dim = @s spawn_dim run scoreboard players reset @s hub
 
+# Make sure there are no monsters nearby
+execute as @a[scores={hub=1}] at @s if entity @e[distance=..16,predicate=dvg:monster] run tellraw @s ["",{"text":"You cannot teleport when monsters are nearby!","color":"red"}]
+execute as @a[scores={hub=1}] at @s if entity @e[distance=..16,predicate=dvg:monster] run scoreboard players reset @s hub
+
 # Make sure that player has ender pearls
-tellraw @a[scores={hub=1,enderpearls=0}] ["",{"text":"You need an ender pearl to teleport!","color":"red"}]
+tellraw @a[scores={hub=1,enderpearls=0}] ["",{"text":"You need an ender pearl to teleport to the hub!","color":"red"}]
 scoreboard players reset @a[scores={hub=1,enderpearls=0}] hub
 
 # compute squared distance from player spawn: dx^2 + dy^2 + dz^2
@@ -40,7 +44,7 @@ execute as @a[scores={hub=1}] run scoreboard players operation @s dx += @s dz
 
 # Test distance
 scoreboard players set @a[scores={hub=1,dx=..256}] near_home 1
-tellraw @a[scores={hub=1,near_home=0}] ["",{"text":"You are too far away from your respawn point!","color":"red"}]
+tellraw @a[scores={hub=1,near_home=0}] ["",{"text":"You are too far away from your home!","color":"red"}]
 scoreboard players reset @a[scores={hub=1,near_home=0}] hub
 
 # Teleport

@@ -1,2 +1,2 @@
 scoreboard objectives add hub trigger
-scoreboard objectives add back trigger
+scoreboard objectives add home trigger
