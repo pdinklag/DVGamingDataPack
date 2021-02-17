@@ -8,21 +8,18 @@ execute as @a store result score @s location_z run data get entity @s Pos[2]
 # -1  = minecraft:the_nether
 #  0  = minecraft:overworld (hub)
 #  1  = dvg:ancient
-#  2  = dvg:calcite
-#  3  = dvg:dripstone
+#  2  = dvg:grimstone
 # >2  = reserved for future overworlds
 scoreboard players set @a location_dim 999
 scoreboard players set @a[nbt={Dimension:"minecraft:the_end"}] location_dim -2
 scoreboard players set @a[nbt={Dimension:"minecraft:the_nether"}] location_dim -1
 scoreboard players set @a[nbt={Dimension:"minecraft:overworld"}] location_dim 0
 scoreboard players set @a[nbt={Dimension:"dvg:ancient"}] location_dim 1
-scoreboard players set @a[nbt={Dimension:"dvg:calcite"}] location_dim 2
-scoreboard players set @a[nbt={Dimension:"dvg:dripstone"}] location_dim 3
+scoreboard players set @a[nbt={Dimension:"dvg:grimstone"}] location_dim 2
 
 scoreboard players set @a spawn_dim 999
 scoreboard players set @a[nbt={SpawnDimension:"minecraft:the_end"}] spawn_dim -2
 scoreboard players set @a[nbt={SpawnDimension:"minecraft:the_nether"}] spawn_dim -1
 scoreboard players set @a[nbt={SpawnDimension:"minecraft:overworld"}] spawn_dim 0
 scoreboard players set @a[nbt={SpawnDimension:"dvg:ancient"}] spawn_dim 1
-scoreboard players set @a[nbt={SpawnDimension:"dvg:calcite"}] spawn_dim 2
-scoreboard players set @a[nbt={SpawnDimension:"dvg:dripstone"}] spawn_dim 3
+scoreboard players set @a[nbt={SpawnDimension:"dvg:grimstone"}] spawn_dim 2
