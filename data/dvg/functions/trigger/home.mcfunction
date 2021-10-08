@@ -17,9 +17,6 @@ execute if data entity @s {SpawnDimension:"minecraft:the_nether"} run execute in
 # kill armor stand
 kill @e[tag=playerspawn]
 
-# consume ender pearl
-execute if entity @s[tag=home,predicate=dvg:regular_player] run clear @s #dvg:teleport_currency 1
-
 # fx at new position
 tag @a[tag=home] add fx_teleport
 

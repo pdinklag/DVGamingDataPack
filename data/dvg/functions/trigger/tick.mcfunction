@@ -11,4 +11,4 @@ scoreboard players enable @a[predicate=dvg:in_home_dimension,predicate=dvg:has_t
 execute as @a[scores={home=1..}] at @s run function dvg:trigger/home
 tag @a[tag=home] remove home
 scoreboard players reset @a home
-scoreboard players enable @a[predicate=dvg:in_spawn_dimension,predicate=dvg:has_teleport_currency,distance=..8] home
+scoreboard players enable @a[predicate=dvg:in_spawn_dimension,distance=..8] home
