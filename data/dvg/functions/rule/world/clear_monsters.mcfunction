@@ -1,0 +1,1 @@
+tp @e[type=#dvg:monster,distance=..128] 0 -256 0

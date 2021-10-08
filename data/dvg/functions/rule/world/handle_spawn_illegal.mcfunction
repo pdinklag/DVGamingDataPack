@@ -1,0 +1,2 @@
+execute positioned ~-64 0 ~-64 as @a[predicate=dvg:regular_player,dx=128,dy=256,dz=128,predicate=dvg:holds_spawn_illegal] run tellraw @s ["",{"text":"Fluids, fire and explosives are not allowed near a spawn area!","color":"red"}]
+execute positioned ~-64 0 ~-64 as @a[predicate=dvg:regular_player,dx=128,dy=256,dz=128,predicate=dvg:holds_spawn_illegal] run clear @s #dvg:spawn_illegal

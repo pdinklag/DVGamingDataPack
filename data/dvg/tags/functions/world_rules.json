@@ -1,0 +1,9 @@
+{
+    "replace": false,
+    "values": [
+        "dvg:rule/world/clear_dangerous",
+        "dvg:rule/world/clear_monsters",
+        "dvg:rule/world/handle_spawn_flyers",
+        "dvg:rule/world/handle_spawn_illegal"
+    ]
+}

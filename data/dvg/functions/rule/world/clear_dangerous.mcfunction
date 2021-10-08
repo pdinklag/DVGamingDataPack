@@ -1,0 +1,1 @@
+kill @e[type=#dvg:dangerous,distance=..128]

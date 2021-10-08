@@ -1,0 +1,25 @@
+{
+    "condition": "minecraft:alternative",
+    "terms": [
+        {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "location": {
+                    "dimension": "minecraft:overworld"
+                },
+                "nbt": "{SpawnDimension:\"minecraft:overworld\"}"
+            }
+        },
+        {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "location": {
+                    "dimension": "minecraft:the_nether"
+                },
+                "nbt": "{SpawnDimension:\"minecraft:the_nether\"}"
+            }
+        }
+    ]
+}

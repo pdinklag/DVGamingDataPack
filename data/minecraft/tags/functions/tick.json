@@ -1,0 +1,11 @@
+{
+    "replace": false,
+    "values": [
+        "dvg:currency/tick",
+        "dvg:fx/tick",
+        "dvg:rule/tick",
+        "dvg:trigger/tick"
+    ],
+    "disabled": [
+    ]
+}

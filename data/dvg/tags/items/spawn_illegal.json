@@ -1,0 +1,12 @@
+{
+    "replace": false,
+    "values": [
+        "minecraft:end_crystal",
+        "minecraft:flint_and_steel",
+        "minecraft:lava_bucket",
+        "minecraft:respawn_anchor",
+        "minecraft:tnt",
+        "minecraft:tnt_minecart",
+        "minecraft:water_bucket"
+    ]
+}

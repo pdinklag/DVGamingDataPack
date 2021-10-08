@@ -1,0 +1,1 @@
+execute as @a run execute store result score @s currency.teleport run clear @s #dvg:teleport_currency 0

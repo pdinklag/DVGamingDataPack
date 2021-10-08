@@ -1,0 +1,7 @@
+{
+    "replace": false,
+    "values": [
+        "dvg:currency/load",
+        "dvg:trigger/load"
+    ]
+}
