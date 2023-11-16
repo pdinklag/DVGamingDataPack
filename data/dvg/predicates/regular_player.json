@@ -1,11 +1,12 @@
 {
-    "condition": "alternative",
+    "condition": "any_of",
     "terms": [
         {
             "condition": "entity_properties",
             "entity": "this",
             "predicate": {
-                "player": {
+                "type_specific": {
+                    "type": "player",
                     "gamemode": "adventure"
                 }
             }
@@ -14,7 +15,8 @@
             "condition": "entity_properties",
             "entity": "this",
             "predicate": {
-                "player": {
+                "type_specific": {
+                    "type": "player",
                     "gamemode": "survival"
                 }
             }
